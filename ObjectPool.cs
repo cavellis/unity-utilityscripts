@@ -26,6 +26,7 @@ public class ObjectPool : MonoBehaviour
 	void Start () 
 	{
 		objectHashtable = new Hashtable();
+		
 	}
 	/**
 	 * Checks that the object pool for a certain object type exists, if not creates it
