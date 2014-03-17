@@ -32,7 +32,7 @@ public class ObjectPool : MonoBehaviour
 	 * gameObjectType The object type to create the pool for
 	 * return void
 	 */
-	internal void checkHashtable(string gameObjectType)
+	internal void CheckHashtable(string gameObjectType)
 	{
 		if(objectHashtable == null)
 		{
@@ -55,7 +55,7 @@ public class ObjectPool : MonoBehaviour
 	public GameObject GetObject(string gameObjectType)
 	{
 		// see if this object pool needs to be created
-		checkHashtable(gameObjectType);
+		CheckHashtable(gameObjectType);
 
 		// get the appropriate list
 		List<GameObject> objList = (List<GameObject>) objectHashtable[gameObjectType];
@@ -84,7 +84,7 @@ public class ObjectPool : MonoBehaviour
 	public void ReleaseObject(GameObject gameObj, string gameObjectType)
 	{
 		// see if this object pool needs to be created
-		checkHashtable(gameObjectType);
+		CheckHashtable(gameObjectType);
 		List<GameObject> objList = (List<GameObject>) objectHashtable[gameObjectType];
 		objList.Add(gameObj);
 	}
